@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root{
+    /* ### Primary */
+
+    --Moderateviolet: hsl(263, 55%, 52%);
+    --Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --Verydarkblackishblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* ### Neutral */
+
+    --Lightgray: hsl(0, 0%, 81%);
+    --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: var(--Lightgrayishblue);
+}
+
+.container{
+    margin: 70px auto 0;
+    max-width: 328px;
+}
+
+.card{
+    width: 100%;
+    padding: 22px 30px 28px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 10px 10px 10px hsl(0, 0%, 81%, 50%);
+}
+
+/* Cards Colors */
+#uno{
+    background-color: var(--Moderateviolet);
+    position: relative;
+}
+#dos{background-color: var(--Verydarkgrayishblue);}
+#cuatro{background-color: var(--Verydarkblackishblue);}
+/* ------------ */
+
+.quotation{
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 18px;
+    width: 104px;
+    height: 104px;
+    position: absolute;
+}
+
+/* Cards */
+.card__perfil{
+    display: flex;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.card__perfil img{
+    border-radius: 50%;
+    max-width: 34px;
+    max-height: 34px;
+    border: 2px solid hsl(0, 0%, 100%, 70%);
+}
+
+.card__name{
+    padding-left: 16px;
+    color: var(--White);
+}
+
+.card__name span{   
+    color: hsl(0, 0%, 100%, 50%);
+}
+
+.card h2{
+    color: var(--White);
+    font-weight: 600;
+    font-size: 1.58em;
+    margin-bottom: 24px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.card__comment{
+    color: hsl(0, 0%, 100%, 70%);
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* White Cards */
+#blanco{
+    background-color: var(--White);
+}
+#blanco .card__name{
+    color: var(--Verydarkgrayishblue);
+}
+
+#blanco .card__name span{
+    color: hsl(217, 19%, 35%, 50%);
+}
+#blanco h2{
+    color: var(--Verydarkgrayishblue);
+}
+#blanco .card__comment{
+    color: hsl(217, 19%, 35%, 50%);
+}
+/* ------------ */
+
+.attribution { font-size: 11px; text-align: center; margin-bottom: 20px;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Desktop Version */
+@media screen and (min-width: 1200px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(4, 255px);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 24px 30px;
+        max-width: 1115px;
+        margin-bottom: 30px;
+    }
+
+    .quotation{
+        right: 90px;
+    }
+    .card{
+        margin: 0;
+    }
+
+    .card h2{
+        font-size: 1.5em;
+    }
+
+    #uno{
+        grid-column: 1/span 2;
+        width: 540px;
+    }
+
+    .tres{
+        grid-column: 1/2;
+        grid-row: 2/-1; 
+    }
+
+    #cuatro{
+        grid-row: 2/-1;
+        grid-column: 2/span 2;
+    }
+
+    .cinco{
+        grid-row: 1/-1;
+    }
+}
